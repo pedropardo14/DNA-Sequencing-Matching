@@ -1,0 +1,78 @@
+Pedro Pardo - ourvectorAnalysis
+
+Welcome to the DNA Profiling Application.
+Enter command or # to exit:
+load_db small.txt
+Loading database...
+Enter command or # to exit:
+load_dna 1.txt
+Loading DNA...
+Enter command or # to exit:
+process
+Processing DNA...
+Enter command or # to exit:
+search
+Searching database...
+Found in database! DNA matches: Bob
+Enter command or # to exit:
+display
+Database loaded:
+Alice 2 8 3 
+Bob 4 1 5 
+Charlie 3 2 5 
+
+DNA Loaded:
+AAGGTAAGTTTAGAATATAAAAGGTGAGTTAAATAGAATAGGTTAAAATTAAAGGAGATCAGATCAGATCAGATCTATCTATCTATCTATCTATCAGAAAAGAGTAAATAGTTAAAGAGTAAGATATTGAATTAATGGAAAATATTGTTGGGGAAAGGAGGGATAGAAGG
+
+DNA processed, STR counts: 
+AGATC: 4
+AATG: 1
+TATC: 5
+
+Enter command or # to exit:
+#
+*********************************************************
+ourvector<7strands> stats:
+ # of vectors created:   1
+ # of elements inserted: 3
+ # of elements accessed: 38
+*********************************************************
+*********************************************************
+ourvector<9ourvectorIcE> stats:
+ # of vectors created:   13
+ # of elements inserted: 48
+ # of elements accessed: 2894
+*********************************************************
+*********************************************************
+ourvector<9ourvectorIS_IcEE> stats:
+ # of vectors created:   1
+ # of elements inserted: 4
+ # of elements accessed: 2889
+*********************************************************
+*********************************************************
+ourvector<c> stats:
+ # of vectors created:   113
+ # of elements inserted: 401
+ # of elements accessed: 2980
+*********************************************************
+pedropardo@Pedros-MacBook-Pro-2 Starter Code % 
+
+ourvector<7strands> stats:
+X - This vector has multiple elements because within my load database create psuedo vectors to store things within eachother. Line 38 creates a single vector for each chararcter, while line 39 creates a 2d vector, which would count for two. Then on line 148 we use the struct vector to add the amount. Since all these vectors get cleared and resused they add more. Finally within creative they get recreated when user input something.
+Y -  These elements are only inserted when they get called such as in process, creative, or loading in the database.
+Z - Since we use a majority of these vectors the elements get accessed within three different functions.
+
+ourvector<9ourvectorIcE> stats:
+X - I believe this vector to be related to DNA.  Since it was created within main its never created again at all. Its accessed multiple time but never cleared or deleted.
+Y - I dont really understand why 4 elements were inserted within this vecotr when all that was inserted was the DNA file itself.
+Z - What made me believe this to be DNA was the elements accessed. Since DNA is used mainly within the process function to search easy char individually one by one, the number of accessed would be huge. Just within one txt file there is already 60+ elemements and it has to search it multiple times.
+
+ourvector<9ourvectorIS_IcEE> stats:
+X - Since this relates to the 3d vector, it only is ever created once and strickly just added to as it goes on.
+Y - Relates to the rows from the database, since there are 4 rows in total it only makes 4, once for each row
+Z - Because of all the searches within the file are used, it adds multiple to the accessed. Such as within the process and search not only does process itslef compare each char with another, it would add one. Especially if the dna strand is big, each comparison for just the strna would go up.
+
+ourvector<c> stats:
+X - I believe this to be all the vectors within the main.cpp file itself. Since its such a massive number i wouldnt have a clue on where they come from.
+Y - Most of the program is inserting things into an ourvector, in almost every function a ourvector is called and used to add elements. Because of this the amount of times things was inserted would be large as well.
+Z - Accessing things within an ourvector is in almost every function. Looping through the files is used a plethera of times so the amount of things being accesses increases by the size for the file in almost every vector.
